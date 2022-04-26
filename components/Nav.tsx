@@ -103,7 +103,7 @@ export default function Nav({ }: NavProps) {
 
   return (
     <div className="flex justify-between">
-      <Link href="/">
+      <Link href="/" passHref>
         <h2 className="font-bold cursor-pointer">This-OR-That</h2>
       </Link>
       {
@@ -242,7 +242,7 @@ export default function Nav({ }: NavProps) {
                   <div className="px-1 py-1 ">
                     <Menu.Item>
                       {({ active }) => (
-                        <a href={`https://explorer.testnet.near.org/accounts/${account?.accountId}`} target="_blank">
+                        <a href={`https://explorer.testnet.near.org/accounts/${account?.accountId}`} target="_blank" rel="noreferrer" >
                           <button
                             className={`${active ? 'bg-secondary text-white' : 'text-gray-900'
                               } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
