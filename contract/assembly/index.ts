@@ -24,8 +24,11 @@ export function vote(pollId: string, contestantIndex: string): void {
         throw new Error(`poll with ${pollId} doesnt exists`);
     }
     if(poll.participants.includes(context.sender)) {
-        throw new Error(`poll with ${pollId} doesnt exists`);
+        throw new Error(`user  ${context.sender} has already voted`);
 
+    }
+    if(context.blockTimestamp > I32.parseInt(poll.deadline)) {
+        throw new Error(`poll with id ${pollId} is expired`);
     }
    
     poll.vote(I32.parseInt(contestantIndex));

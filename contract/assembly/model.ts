@@ -16,6 +16,7 @@ import { PersistentUnorderedMap, u128, context } from "near-sdk-as";
 @nearBindgen
 export class Contestant {
     name: string;
+    img: string;
     votes: u32;
 
     constructor(){}
@@ -35,7 +36,7 @@ export class Poll {
     poll.prompt = payload.prompt;
     poll.participants = payload.participants;
     poll.contestants = payload.contestants;
-    poll.created = payload.created;
+    poll.created = context.blockTimestamp.toString();
     poll.deadline = payload.deadline;
     poll.owner = context.sender;
     return poll;
