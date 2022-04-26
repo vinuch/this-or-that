@@ -27,7 +27,7 @@ export function vote(pollId: string, contestantIndex: string): void {
         throw new Error(`user  ${context.sender} has already voted`);
 
     }
-    if(context.blockTimestamp > I32.parseInt(poll.deadline)) {
+    if(context.blockTimestamp > U64.parseInt(poll.deadline)) {
         throw new Error(`poll with id ${pollId} is expired`);
     }
    
