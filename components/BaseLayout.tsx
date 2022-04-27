@@ -26,7 +26,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
         if (!window.walletConnection.account().accountId) {
             router.push('/')
         }
-    }, [router])
+    }, [])
 
 
     return (

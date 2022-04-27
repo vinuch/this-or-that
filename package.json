@@ -1,15 +1,12 @@
 {
-  "homepage": "https://vinuch.github.io/this-or-that",
   "name": "thisorthat",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "lint": "next lint"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
