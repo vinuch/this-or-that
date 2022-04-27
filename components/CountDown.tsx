@@ -31,7 +31,7 @@ const CountDown = ({ time }: { time: string; }) => {
             return () => clearInterval(timerId);
         }
 
-    }, [countDownDate]);
+    }, [countDownDate, tick]);
 
 
     return (

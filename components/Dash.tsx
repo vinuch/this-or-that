@@ -40,7 +40,7 @@ export default function Dash() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [contract]);
 
   useEffect(() => {
     getPolls();

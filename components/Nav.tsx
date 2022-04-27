@@ -103,7 +103,7 @@ export default function Nav({ }: NavProps) {
 
   return (
     <div className="flex justify-between">
-      <Link href="/">
+      <Link href="/" passHref>
         <h2 className="font-bold cursor-pointer">This-OR-That</h2>
       </Link>
       {
