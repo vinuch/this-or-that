@@ -45,7 +45,7 @@ export default function Poll() {
     } finally {
       setLoading(false);
     }
-  }, [router.query, account.accountId , contract]);
+  }, [router.query]);
 
   useEffect(() => {
     getPoll();
