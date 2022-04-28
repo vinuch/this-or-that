@@ -41,7 +41,7 @@ export class Poll {
     poll.owner = context.sender;
     return poll;
   }
-  public vote(contestantIndex: i32): void {
+  public vote(contestantIndex: u32): void {
     let contestant = this.contestants[contestantIndex];
     if(contestant === null) {
       throw new Error(`contestant with ${contestantIndex} doesnt exists`);
