@@ -17,22 +17,23 @@ export function getPolls(): Poll[] {
     return listedPolls.values();
 }
 
-export function vote(pollId: string, contestantIndex: string): void {
 
+export function vote(pollId: string, contestantIndex: string): void {
     let poll = listedPolls.get(pollId);
     if(poll == null) {
         throw new Error(`poll with ${pollId} doesnt exists`);
     }
     if(poll.participants.includes(context.sender)) {
         throw new Error(`user  ${context.sender} has already voted`);
-
     }
     // if(new Date(context.blockTimestamp).getTime() > new Date(U64.parseInt(poll.deadline)).getTime()) {
     //     throw new Error(`poll with id ${pollId} is expired ${context.blockTimestamp } ${U64.parseInt(poll.deadline)}`);
     // }
-   
-    poll.vote(I32.parseInt(contestantIndex));
+    const index: u32 = U32.parseInt(contestantIndex);
+    poll.vote(index);
     poll.participants.push(context.sender);
     listedPolls.set(pollId, poll);
 }
+
+
 
