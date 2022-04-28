@@ -79,9 +79,9 @@ export default function Poll() {
         expiredPoll ? (<p className="text-xl font-bold text-red-600 text-center">This poll is expired !! </p>) : <CountDown time={poll?.deadline || ''} />
       }
       {/* <CountDown time={poll?.deadline || ''}/> */}
-      <main className="flex justify-between items-center h-full" style={{ height: '85vh' }}>
-        <div className={`bg-primaryLight overflow-hidden rounded-md h-4/6 w-4/12 cursor-pointer ${selected == poll?.contestants.indexOf(poll?.contestants[0]) ? "border border-8 border-secondary" : ""}`} onClick={() => !expiredPoll && !alreadyVoted && setselected(0)}>
-          <div className="h-5/6 flex justify-center items-center ">
+      <main className="flex justify-between items-center py-32 md:py-0 h-4/6 md:h-85vh">
+        <div className={`bg-primaryLight overflow-hidden rounded-md md:h-4/6 w-4/12 cursor-pointer ${selected == poll?.contestants.indexOf(poll?.contestants[0]) ? "border border-8 border-secondary" : ""}`} onClick={() => !expiredPoll && !alreadyVoted && setselected(0)}>
+          <div className="md:h-5/6 flex justify-center items-center ">
             {
               poll?.contestants[0].img && !img1Err ? (<img src={poll?.contestants[0].img || "/question-mark.png"} alt="question mark" onError={() => setimg1Err(true)} className="object-cover w-full h-full" />) : (<img src="/question-mark.png" alt="question mark" className="w-64 h-64" />)
             }
@@ -92,16 +92,16 @@ export default function Poll() {
           <p className="text-center font-bold text-lg mt-4"> {poll?.contestants[0].votes} Votes</p>
         </div>
         <div className="text-center w-3/12">
-          <div className="font-extrabold text-5xl -mt-32 break-words"> <p className={`${selected == poll?.contestants.indexOf(poll?.contestants[0]) ? 'text-secondary' : ''}`}>{poll?.contestants[0].name}</p>  <p className="text-lg text-secondary my-6">vs</p> <p className={`${selected == poll?.contestants.indexOf(poll?.contestants[1]) ? 'text-secondary' : ''}`}>{poll?.contestants[1].name}</p></div>
+          <div className="font-extrabold md:text-5xl md:-mt-32 break-words"> <p className={`${selected == poll?.contestants.indexOf(poll?.contestants[0]) ? 'text-secondary' : ''}`}>{poll?.contestants[0].name}</p>  <p className="text-lg text-secondary my-3 md:my-6">vs</p> <p className={`${selected == poll?.contestants.indexOf(poll?.contestants[1]) ? 'text-secondary' : ''}`}>{poll?.contestants[1].name}</p></div>
 
-          <p className="text-xl font-light mt-16">{poll?.prompt}</p>
+          <p className="text-sm md:text-xl font-light mt-16">{poll?.prompt}</p>
 
           <p className="text-xs mt-6">(click to choose)</p>
 
         </div>
 
-        <div className={`bg-primaryLight rounded-md h-4/6 w-4/12 cursor-pointer ${selected == poll?.contestants.indexOf(poll?.contestants[1]) ? "border border-8 border-secondary" : ""}`} onClick={() => !expiredPoll && !alreadyVoted && setselected(1)}>
-          <div className="h-5/6 flex justify-center items-center ">
+        <div className={`bg-primaryLight rounded-md md:h-4/6 w-4/12 cursor-pointer ${selected == poll?.contestants.indexOf(poll?.contestants[1]) ? "border border-8 border-secondary" : ""}`} onClick={() => !expiredPoll && !alreadyVoted && setselected(1)}>
+          <div className="md:h-5/6 flex justify-center items-center ">
             {
               poll?.contestants[1].img && !img2Err ? (<img src={poll?.contestants[1].img || "/question-mark.png"} alt="question mark" onError={() => setimg2Err(true)} className="object-cover w-full h-full" />) : (<img src="/question-mark.png" alt="question mark" className="rotate-180 w-64 h-64" />)
             }

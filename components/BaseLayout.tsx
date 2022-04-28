@@ -30,7 +30,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
 
 
     return (
-        <div className="bg-primary min-h-screen p-6 text-white ">
+        <div className="bg-primary min-h-screen p-4 md:p-6 text-white ">
             <Nav />
             <Notification />
             {children}

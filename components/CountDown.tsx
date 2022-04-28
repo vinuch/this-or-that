@@ -35,8 +35,8 @@ const CountDown = ({ time }: { time: string; }) => {
 
 
     return (
-        <div className="pt-4">
-            <p className="text-secondary text-center text-2xl font-bold">Poll closes in : {`${counter.days}d ${counter.hours}h ${counter.minutes}m ${counter.seconds}s`}</p>
+        <div className="pt-10 md:pt-4">
+            <p className="text-secondary text-center md:text-2xl font-bold">Poll closes in : {`${counter.days}d ${counter.hours}h ${counter.minutes}m ${counter.seconds}s`}</p>
         </div>
     );
 }

@@ -104,13 +104,13 @@ export default function Nav({ }: NavProps) {
   return (
     <div className="flex justify-between">
       <Link href="/" passHref>
-        <h2 className="font-bold cursor-pointer">This-OR-That</h2>
+        <h2 className="font-bold cursor-pointer text-sm hover:underline ">This-OR-That</h2>
       </Link>
       {
         account?.accountId ?
           (<div className="flex items-center">
 
-            <button className="bg-secondary px-6  py-2 rounded-md font-bold" onClick={openModal}>Create Poll</button>
+            <button className="bg-secondary px-3 text-sm md:text-base md:px-6  py-2 rounded-md font-bold" onClick={openModal}>Create Poll</button>
             {/* <Transition appear show={isOpen} as={Fragment}> */}
             <Dialog
               as="div"
@@ -218,7 +218,7 @@ export default function Nav({ }: NavProps) {
             </Dialog>
             {/* </Transition> */}
 
-            <div className="w-40 text-right  top-16">
+            <div className="ml-2 md:w-40 text-right  top-16">
               <Menu as="div" className="relative inline-block text-left">
                 <div>
                   <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
