@@ -257,7 +257,11 @@ export default function Nav({ }: NavProps) {
                     <Menu.Item>
                       {({ active }) => (
                         <button
-                          onClick={logout}
+                          onClick={() => {
+                            router.push('/'); setTimeout(() => {
+                              logout()
+                            }, 1000);
+                          }}
                           className={`${active ? 'bg-secondary text-white' : 'text-gray-900'
                             } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                         >
