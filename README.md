@@ -1,3 +1,9 @@
+This-or-That is a decentralized polling project where anyone can create polls and have other people vote in favour of one option or the other.
+The frontend is built with nextJS and typescript, smartcontract in assemblyscript on the NEAR protocol
+## Live link 
+
+[`https://this-or-that-dapp.vercel.app/`](https://this-or-that-dapp.vercel.app/), try it out.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
